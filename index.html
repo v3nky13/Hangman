@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hangman</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Hangman</h1>
+      <div class="hangman"></div>
+      <h3 id="winning-status">Guess:</h3>
+      <div class="phrase">
+        <h2 id="phrase-text"></h2>
+        <button class="new-phrase" onclick="newPhrase()">↻</button>
+      </div>
+      <div class="alphabets">
+        <button class="letter letter-hover" id="a" onclick="newGuess(this.id)">
+          A
+        </button>
+        <button class="letter letter-hover" id="b" onclick="newGuess(this.id)">
+          B
+        </button>
+        <button class="letter letter-hover" id="c" onclick="newGuess(this.id)">
+          C
+        </button>
+        <button class="letter letter-hover" id="d" onclick="newGuess(this.id)">
+          D
+        </button>
+        <button class="letter letter-hover" id="e" onclick="newGuess(this.id)">
+          E
+        </button>
+        <button class="letter letter-hover" id="f" onclick="newGuess(this.id)">
+          F
+        </button>
+        <button class="letter letter-hover" id="g" onclick="newGuess(this.id)">
+          G
+        </button>
+        <button class="letter letter-hover" id="h" onclick="newGuess(this.id)">
+          H
+        </button>
+        <button class="letter letter-hover" id="i" onclick="newGuess(this.id)">
+          I
+        </button>
+        <button class="letter letter-hover" id="j" onclick="newGuess(this.id)">
+          J
+        </button>
+        <button class="letter letter-hover" id="k" onclick="newGuess(this.id)">
+          K
+        </button>
+        <button class="letter letter-hover" id="l" onclick="newGuess(this.id)">
+          L
+        </button>
+        <button class="letter letter-hover" id="m" onclick="newGuess(this.id)">
+          M
+        </button>
+        <button class="letter letter-hover" id="n" onclick="newGuess(this.id)">
+          N
+        </button>
+        <button class="letter letter-hover" id="o" onclick="newGuess(this.id)">
+          O
+        </button>
+        <button class="letter letter-hover" id="p" onclick="newGuess(this.id)">
+          P
+        </button>
+        <button class="letter letter-hover" id="q" onclick="newGuess(this.id)">
+          Q
+        </button>
+        <button class="letter letter-hover" id="r" onclick="newGuess(this.id)">
+          R
+        </button>
+        <button class="letter letter-hover" id="s" onclick="newGuess(this.id)">
+          S
+        </button>
+        <button class="letter letter-hover" id="t" onclick="newGuess(this.id)">
+          T
+        </button>
+        <button class="letter letter-hover" id="u" onclick="newGuess(this.id)">
+          U
+        </button>
+        <button class="letter letter-hover" id="v" onclick="newGuess(this.id)">
+          V
+        </button>
+        <button class="letter letter-hover" id="w" onclick="newGuess(this.id)">
+          W
+        </button>
+        <button class="letter letter-hover" id="x" onclick="newGuess(this.id)">
+          X
+        </button>
+        <button class="letter letter-hover" id="y" onclick="newGuess(this.id)">
+          Y
+        </button>
+        <button class="letter letter-hover" id="z" onclick="newGuess(this.id)">
+          Z
+        </button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
