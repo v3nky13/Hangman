@@ -55,6 +55,7 @@ const newPhrase = () => {
     buttons[i].disabled = false;
     buttons[i].classList.add('letter-hover');
   }
+  document.getElementById('hm-img').src = './imgs/hangman-6.png';
   phrase = phrases[Math.floor(Math.random() * phrases.length)];
   console.log(phrase);
   createGuessed();
