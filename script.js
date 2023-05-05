@@ -57,7 +57,6 @@ const newPhrase = () => {
   }
   document.getElementById('hm-img').src = './imgs/hangman-6.png';
   phrase = phrases[Math.floor(Math.random() * phrases.length)];
-  console.log(phrase);
   createGuessed();
   document.getElementById('phrase-text').innerHTML = prettyOutput(guessed);
 };
