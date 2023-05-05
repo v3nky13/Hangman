@@ -46,7 +46,9 @@ const prettyOutput = (str) => {
 
 const newPhrase = () => {
   countLeft = 6;
-  document.getElementById('winning-status').innerHTML = 'Guess:';
+  const winningStatus = document.getElementById('winning-status');
+  winningStatus.innerHTML = 'Guess:';
+  winningStatus.style.color = '#ebecf0';
   buttons = document.getElementsByClassName('letter');
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].style.backgroundColor = '#ebecf0';
@@ -89,14 +91,23 @@ const newGuess = (id) => {
   const crtGuess = updateGuessed(id);
   button.disabled = true;
   button.classList.remove('letter-hover');
-  if (!crtGuess) countLeft--;
+  if (!crtGuess) {
+    countLeft--;
+    document.getElementById('hm-img').src =
+      './imgs/hangman-' + countLeft + '.png';
+  }
   button.style.backgroundColor = crtGuess ? '#50C878' : '#ff6863';
   const won = playerWon();
   document.getElementById('phrase-text').innerHTML =
     won || !countLeft ? prettyOutput(phrase) : prettyOutput(guessed);
-  if (won) document.getElementById('winning-status').innerHTML = 'You Win!';
-  else if (!countLeft)
-    document.getElementById('winning-status').innerHTML = 'You Lost!';
+  const winningStatus = document.getElementById('winning-status');
+  if (won) {
+    winningStatus.innerHTML = 'You Win!';
+    winningStatus.style.color = '#50C878';
+  } else if (!countLeft) {
+    winningStatus.innerHTML = 'You Lost!';
+    winningStatus.style.color = '#ff6863';
+  }
 };
 
 newPhrase();
