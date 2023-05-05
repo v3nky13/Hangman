@@ -49,7 +49,7 @@ const newPhrase = () => {
   const winningStatus = document.getElementById('winning-status');
   winningStatus.innerHTML = 'Guess:';
   winningStatus.style.color = '#ebecf0';
-  buttons = document.getElementsByClassName('letter');
+  const buttons = document.getElementsByClassName('letter');
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].style.backgroundColor = '#ebecf0';
     buttons[i].disabled = false;
@@ -87,6 +87,17 @@ const playerWon = () => {
   return won;
 };
 
+const endOfGame = (msg, clr) => {
+  const winningStatus = document.getElementById('winning-status');
+  winningStatus.innerHTML = msg;
+  winningStatus.style.color = clr;
+  const buttons = document.getElementsByClassName('letter');
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].disabled = true;
+    buttons[i].classList.remove('letter-hover');
+  }
+};
+
 const newGuess = (id) => {
   const button = document.getElementById(id);
   const crtGuess = updateGuessed(id);
@@ -101,14 +112,9 @@ const newGuess = (id) => {
   const won = playerWon();
   document.getElementById('phrase-text').innerHTML =
     won || !countLeft ? prettyOutput(phrase) : prettyOutput(guessed);
-  const winningStatus = document.getElementById('winning-status');
-  if (won) {
-    winningStatus.innerHTML = 'You Win!';
-    winningStatus.style.color = '#50C878';
-  } else if (!countLeft) {
-    winningStatus.innerHTML = 'You Lost!';
-    winningStatus.style.color = '#ff6863';
-  }
+
+  if (won) endOfGame('You Win!', '#50C878');
+  else if (!countLeft) endOfGame('You Lost!', '#ff6863');
 };
 
 newPhrase();
